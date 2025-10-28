@@ -1,0 +1,13 @@
+environment: Development
+
+label:
+  name: billing
+
+replicas: 3
+
+netserv: http-billing
+targetport: 5105
+portserv: 80
+targetportgrps: 5104
+portservgrps: 89
+servicename: billing-service

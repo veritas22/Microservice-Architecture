@@ -1,0 +1,14 @@
+environment: Development
+
+label:
+  name: userservice
+
+replicas: 3
+
+netserv: http-userservice
+targetport: 8080
+portserv: 80
+
+servicename: userservice-service
+otlp: "http://host.docker.internal:4317"
+image: gabbazovr/userserviselocal:latest

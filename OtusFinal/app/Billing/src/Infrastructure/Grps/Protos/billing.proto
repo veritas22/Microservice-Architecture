@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grps";
+
+package billing;
+
+// The greeting service definition.
+service BillingServiseGrps {
+  // Sends a greeting
+  rpc WithdrawMoney (BillingRequest) returns (BillingReply);
+  rpc DepositMoney (BillingRequest) returns (BillingReply);
+
+}
+
+// The request message containing the user's name.
+message BillingRequest {
+  int32 userId = 1;
+  float Amount = 2;
+}
+
+// The response message containing the greetings.
+message BillingReply {
+  float Amount = 1;
+}

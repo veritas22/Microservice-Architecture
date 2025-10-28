@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Grps";
+
+package delivery;
+
+// The greeting service definition.
+service DeliveryServiseGrps {
+  // Sends a greeting
+  rpc AddReserveCourier (ReserveRequestDelivery) returns (ReserveReplyDelivery);
+  rpc DeleteReserveCourier (ReserveReplyDelivery) returns (StatusReplyDelivery);
+}
+
+// The request message containing the user's name.
+message ReserveRequestDelivery {
+  int32 CourierId = 1;
+  int32 UserId = 2;
+  int32 OrderId = 3;
+  google.protobuf.Timestamp TimeSlot = 4;
+}
+
+// The response message containing the greetings.
+message ReserveReplyDelivery {
+  int32 ReserveId = 1;
+}
+// The response message containing the greetings.
+message StatusReplyDelivery {
+  int32 Status = 1;
+}

@@ -1,0 +1,12 @@
+environment: Development
+
+label:
+  name: notification
+
+replicas: 3
+
+netserv: http-notification
+targetport: 8080
+portserv: 80
+
+servicename: notification-service

@@ -1,0 +1,94 @@
+services:
+
+  notification:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - ASPNETCORE_HTTP_PORTS=8060
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "8060:8060"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  order:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - ASPNETCORE_HTTP_PORTS=8040
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "8040:8040"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro  
+      
+  userservise:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - ASPNETCORE_HTTP_PORTS=8080
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  
+  apigetway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - ASPNETCORE_HTTP_PORTS=8050
+      - ASPNETCORE_HTTP_PORTS=8051
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "8050:8050"
+      - "8051:8051"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  billing:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "5104:5104"
+      - "5105:5105"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  warehouse:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "6100:6100"
+      - "6111:6111"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  
+  delivery:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerCompose
+      - ASPNETCORE_HTTP_PORTS=8020
+      - OTLP_CONNECTION=http://otel-collector:4317
+    ports:
+      - "8020:8020"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

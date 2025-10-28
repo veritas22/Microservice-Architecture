@@ -1,0 +1,14 @@
+global:
+  redis:
+    password: "admin"  # Обязательно задать пароль для Redis
+
+architecture: standalone  # Можно оставить по умолчанию standalone (одиночный сервер)
+
+replica:
+  replicaCount: 0  # Без реплик, только мастер (если хотите реплики, ставьте количество > 0)
+
+persistence:
+  enabled: false  # Отключаем хранение данных на диске (для демо или теста)
+
+service:
+  type: ClusterIP  # Тип сервиса внутри кластера, по умолчанию достаточно ClusterIP

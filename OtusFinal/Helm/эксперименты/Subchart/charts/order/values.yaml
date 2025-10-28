@@ -1,0 +1,12 @@
+environment: Development
+
+label:
+  name: order
+
+replicas: 3
+
+netserv: http-order
+targetport: 8080
+portserv: 80
+
+servicename: order-service

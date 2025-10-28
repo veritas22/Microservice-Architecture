@@ -1,0 +1,13 @@
+environment: Development
+
+label:
+  name: apigetway
+
+replicas: 3
+
+netserv: http-apigetway
+targetport: 8080
+portserv: 80
+
+servicename: apigetway-service
+image: gabbazovr/apigetwaylocal:latest

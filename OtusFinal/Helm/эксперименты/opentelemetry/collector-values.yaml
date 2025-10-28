@@ -1,0 +1,57 @@
+mode: deployment  # или daemonset, statefulset
+
+image:
+  repository: otel/opentelemetry-collector-contrib
+
+replicaCount: 1
+
+config:
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+          endpoint: 0.0.0.0:4317
+        http:
+          endpoint: 0.0.0.0:4318
+    prometheus:
+      config:
+        scrape_configs:
+          - job_name: 'kubernetes-pods'
+            kubernetes_sd_configs:
+              - role: pod
+    filelog:
+      include: ["/var/log/pods/*.log"]
+
+  processors:
+    batch:
+    memory_limiter:
+      check_interval: 5s
+      limit_mib: 800
+      spike_limit_mib: 150
+    k8sattributes:
+      auth_type: serviceAccount
+
+  exporters:
+    jaeger:
+      endpoint: "jaeger-collector:14250"
+      tls:
+        insecure: true
+    prometheus:
+      endpoint: "0.0.0.0:8889"
+    loki:
+      endpoint: "http://loki:3100/loki/api/v1/push"
+
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [memory_limiter, batch, k8sattributes]
+        exporters: [jaeger]
+      metrics:
+        receivers: [otlp, prometheus]
+        processors: [memory_limiter, batch, k8sattributes]
+        exporters: [prometheus]
+      logs:
+        receivers: [otlp]
+        processors: [memory_limiter, batch, k8sattributes]
+        exporters: [loki]

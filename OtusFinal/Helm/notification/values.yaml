@@ -1,0 +1,14 @@
+environment: Development
+
+label:
+  name: notification
+
+replicas: 3
+
+netserv: http-notification
+targetport: 8080
+portserv: 80
+
+servicename: notification-service
+otlp: "http://host.docker.internal:4317"
+image: gabbazovr/notificationlocal:latest

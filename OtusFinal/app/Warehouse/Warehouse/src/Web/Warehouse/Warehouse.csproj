@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0e1cd6d0-1637-40e2-b333-fa594bb521a4</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="prometheus-net" Version="8.2.1" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.2.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Application\Application.csproj" />
+    <ProjectReference Include="..\..\Application\Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\EntityCorePostgres\EntityCorePostgres.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Grps\Grps.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\OtlpInfra\OtlpInfra.csproj" />
+  </ItemGroup>
+
+</Project>

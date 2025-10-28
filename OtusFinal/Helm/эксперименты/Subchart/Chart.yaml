@@ -1,0 +1,25 @@
+apiVersion: v2
+name: shop2
+version: 1.0.0
+
+dependencies:
+  - name: apigetway
+    condition: apigetway.enabled
+    version: 1.0.0
+    repository: "file://charts/apigetway"
+  - name: billing
+    condition: billing.enabled
+    version: 1.0.0
+    repository: file://charts/billing
+  - name: userservice
+    condition: userservice.enabled
+    version: 1.0.0
+    repository: file://charts/userservice
+  - name: notification
+    condition: notification.enabled
+    version: 1.0.0
+    repository: file://charts/notification
+  - name: order
+    condition: order.enabled
+    version: 1.0.0
+    repository: file://charts/order    

@@ -1,0 +1,30 @@
+mode: deployment
+
+image:
+  repository: otel/opentelemetry-collector-k8s
+
+replicaCount: 1
+
+presets:
+  clusterMetrics:
+    enabled: true
+  kubernetesEvents:
+    enabled: true
+
+config:
+  exporters:
+    otlp:
+      endpoint: <OBSERVABILITY_BACKEND>
+
+  connectors:
+    spanmetrics:
+
+  service:
+    pipelines:
+      traces:
+        exporters: [spanmetrics, otlp]
+      metrics:
+        receivers: [otlp, spanmetrics]
+        exporters: [otlp] 
+      logs:
+        exporters: [otlp]

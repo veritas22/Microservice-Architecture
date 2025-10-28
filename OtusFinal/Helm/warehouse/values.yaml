@@ -1,0 +1,15 @@
+environment: Development
+
+label:
+  name: warehouse
+
+replicas: 3
+
+netserv: http-warehouse
+targetport: 6100
+portserv: 80
+targetportgrps: 6111
+portservgrps: 89
+servicename: warehouse-service
+image: gabbazovr/warehouselocal:latest
+otlp: "http://host.docker.internal:4317"

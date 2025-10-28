@@ -1,0 +1,18 @@
+dependencies:
+- name: apigetway
+  repository: file://charts/apigetway
+  version: 1.0.0
+- name: billing
+  repository: file://charts/billing
+  version: 1.0.0
+- name: userservice
+  repository: file://charts/userservice
+  version: 1.0.0
+- name: notification
+  repository: file://charts/notification
+  version: 1.0.0
+- name: order
+  repository: file://charts/order
+  version: 1.0.0
+digest: sha256:bac084d8784e1c258ea3e3d854ca05e4c8b2fd899170a8aa15983f5bdef74eee
+generated: "2025-09-03T22:41:09.1254981+05:00"

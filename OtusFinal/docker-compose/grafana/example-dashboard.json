@@ -1,0 +1,214 @@
+{
+  "id": 1,
+  "type": "timeseries",
+  "title": "New panel",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "h": 8,
+    "w": 12
+  },
+  "fieldConfig": {
+    "defaults": {
+      "custom": {
+        "drawStyle": "line",
+        "lineInterpolation": "linear",
+        "barAlignment": 0,
+        "barWidthFactor": 0.6,
+        "lineWidth": 1,
+        "fillOpacity": 0,
+        "gradientMode": "none",
+        "spanNulls": false,
+        "insertNulls": false,
+        "showPoints": "auto",
+        "pointSize": 5,
+        "stacking": {
+          "mode": "none",
+          "group": "A"
+        },
+        "axisPlacement": "auto",
+        "axisLabel": "",
+        "axisColorMode": "text",
+        "axisBorderShow": false,
+        "scaleDistribution": {
+          "type": "linear"
+        },
+        "axisCenteredZero": false,
+        "hideFrom": {
+          "tooltip": false,
+          "viz": false,
+          "legend": false
+        },
+        "thresholdsStyle": {
+          "mode": "off"
+        }
+      },
+      "color": {
+        "mode": "palette-classic"
+      },
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          }
+        ]
+      }
+    },
+    "overrides": []
+  },
+  "pluginVersion": "12.0.2",
+  "targets": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "editorMode": "code",
+      "expr": "histogram_quantile(0.5, sum by(le) (rate(http_request_duration_seconds_bucket{endpoint=~\"api/v1/User/{userId}|api/v1/User/Login\"}[10m])))",
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "A"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "editorMode": "code",
+      "expr": "histogram_quantile(0.95, sum by(le) (rate(http_request_duration_seconds_bucket{endpoint=~\"api/v1/User/{userId}|api/v1/User/Login\"}[10m])))",
+      "hide": false,
+      "instant": false,
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "B"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "editorMode": "code",
+      "expr": "histogram_quantile(0.99, sum by(le) (rate(http_request_duration_seconds_bucket{endpoint=~\"api/v1/User/{userId}|api/v1/User/Login\"}[10m])))",
+      "hide": false,
+      "instant": false,
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "C"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "editorMode": "code",
+      "expr": "sum by (method, endpoint) (rate(http_request_duration_seconds_bucket{endpoint=~\"api/v1/User/{userId}\"}[10m]))",
+      "hide": false,
+      "instant": false,
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "D"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "editorMode": "code",
+      "expr": "sum by (method, endpoint) (rate(http_request_duration_seconds_bucket{code=~\"5..\"}[5m]))",
+      "hide": false,
+      "instant": false,
+      "legendFormat": "__auto",
+      "range": true,
+      "refId": "E"
+    },
+    {
+      "refId": "F",
+      "expr": "histogram_quantile(0.5, sum by (le) (rate(nginx_ingress_controller_request_duration_seconds_bucket[10m])))",
+      "range": true,
+      "instant": false,
+      "datasource": {
+        "uid": "prometheus",
+        "type": "prometheus"
+      },
+      "hide": false,
+      "editorMode": "code",
+      "legendFormat": "__auto"
+    },
+    {
+      "refId": "G",
+      "expr": "histogram_quantile(0.95, sum by (le) (rate(nginx_ingress_controller_request_duration_seconds_bucket[10m])))",
+      "range": true,
+      "instant": false,
+      "datasource": {
+        "uid": "prometheus",
+        "type": "prometheus"
+      },
+      "hide": false,
+      "editorMode": "code",
+      "legendFormat": "__auto"
+    },
+    {
+      "refId": "H",
+      "expr": "histogram_quantile(0.99, sum by (le) (rate(nginx_ingress_controller_request_duration_seconds_bucket[10m])))",
+      "range": true,
+      "instant": false,
+      "datasource": {
+        "uid": "prometheus",
+        "type": "prometheus"
+      },
+      "hide": false,
+      "editorMode": "code",
+      "legendFormat": "__auto"
+    },
+    {
+      "refId": "I",
+      "expr": "sum(rate(nginx_ingress_controller_nginx_process_requests_total[1m]))",
+      "range": true,
+      "instant": false,
+      "datasource": {
+        "uid": "prometheus",
+        "type": "prometheus"
+      },
+      "hide": false,
+      "editorMode": "code",
+      "legendFormat": "__auto"
+    },
+    {
+      "refId": "J",
+      "expr": "sum(rate(nginx_ingress_controller_nginx_process_requests_total{status=~\"5..\"}[5m]))",
+      "range": true,
+      "instant": false,
+      "datasource": {
+        "uid": "prometheus",
+        "type": "prometheus"
+      },
+      "hide": false,
+      "editorMode": "code",
+      "legendFormat": "__auto"
+    }
+  ],
+  "datasource": {
+    "type": "prometheus",
+    "uid": "prometheus"
+  },
+  "options": {
+    "tooltip": {
+      "mode": "single",
+      "sort": "none",
+      "hideZeros": false
+    },
+    "legend": {
+      "showLegend": true,
+      "displayMode": "list",
+      "placement": "bottom",
+      "calcs": []
+    }
+  }
+}

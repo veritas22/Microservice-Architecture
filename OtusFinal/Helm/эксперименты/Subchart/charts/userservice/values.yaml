@@ -1,0 +1,12 @@
+environment: Development
+
+label:
+  name: userservice
+
+replicas: 3
+
+netserv: http-userservice
+targetport: 8080
+portserv: 80
+
+servicename: userservice-service

@@ -1,0 +1,15 @@
+environment: Development
+
+label:
+  name: delivery
+
+replicas: 3
+
+netserv: http-delivery
+targetport: 8080
+portserv: 80
+
+servicename: delivery-service
+image: gabbazovr/deliverylocal:latest
+otlp: "http://host.docker.internal:4317"
+

@@ -1,0 +1,1264 @@
+{
+	"info": {
+		"_postman_id": "1f373a87-ef80-427c-b97d-4493e4d17ccc",
+		"name": "Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13239528",
+		"_collection_link": "https://ruslan22.postman.co/workspace/%D0%BC%D0%B5%D0%B3%D0%B0%D1%82%D0%B5%D0%BA~f07c9260-ede2-4061-8acd-d131ddb49294/collection/13239528-1f373a87-ef80-427c-b97d-4493e4d17ccc?action=share&source=collection_link&creator=13239528"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "PlaceOrder",
+					"item": [
+						{
+							"name": "/Order/PlaceOrder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Order/PlaceOrder?amount=3321.806870845747",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Order",
+										"PlaceOrder"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "3321.806870845747"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Order/PlaceOrder?amount=3321.806870845747",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Order",
+												"PlaceOrder"
+											],
+											"query": [
+												{
+													"key": "amount",
+													"value": "3321.806870845747"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Mail",
+			"item": [
+				{
+					"name": "GetMail",
+					"item": [
+						{
+							"name": "/Mail/GetMail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/Mail/GetMail"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": "{{baseUrl}}/Mail/GetMail"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "GetAccount",
+					"item": [
+						{
+							"name": "/Auth/GetAccount",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/Auth/GetAccount"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": "{{baseUrl}}/Auth/GetAccount"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetUserIdToken",
+					"item": [
+						{
+							"name": "/Auth/GetUserIdToken",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/Auth/GetUserIdToken"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": "{{baseUrl}}/Auth/GetUserIdToken"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "/Auth/Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/Auth/Login"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/Auth/Login"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "/Auth/Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/Auth/Register"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/Auth/Register"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UpdateUser",
+					"item": [
+						{
+							"name": "/Auth/UpdateUser",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Auth/UpdateUser?userid=5123",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Auth",
+										"UpdateUser"
+									],
+									"query": [
+										{
+											"key": "userid",
+											"value": "5123"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"string\",\n  \"password\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Auth/UpdateUser?userid=5123",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Auth",
+												"UpdateUser"
+											],
+											"query": [
+												{
+													"key": "userid",
+													"value": "5123"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Billing",
+			"item": [
+				{
+					"name": "GetAmount",
+					"item": [
+						{
+							"name": "/Billing/GetAmount",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/Billing/GetAmount"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": "{{baseUrl}}/Billing/GetAmount"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SetDeposit",
+					"item": [
+						{
+							"name": "/Billing/SetDeposit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Billing/SetDeposit?amount=617.0700861371258",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Billing",
+										"SetDeposit"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "617.0700861371258"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Billing/SetDeposit?amount=617.0700861371258",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Billing",
+												"SetDeposit"
+											],
+											"query": [
+												{
+													"key": "amount",
+													"value": "617.0700861371258"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "1) Создать пользователя. Должен создаться аккаунт в биллинге.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.eql(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"Ruslan\",\n  \"telephone\": \"+792222133212\",\n  \"password\": \"22\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/Auth/Register"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"s\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/Auth/Register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "2) вход пользователя 1, получим токен",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"Ruslan\",\n  \"telephone\": \"+792222133212\",\n  \"password\": \"22\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/Auth/Login"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userName\": \"string\",\n  \"telephone\": \"s\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/Auth/Login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "3) Положить деньги на счет пользователя через сервис биллинга.",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"try {\r",
+									"    const response = await pm.sendRequest({\r",
+									"        url: \"https://postman-echo.com/get\",\r",
+									"        method: \"GET\"\r",
+									"    });\r",
+									"\r",
+									"    console.log(response.json());\r",
+									"} catch (err) {\r",
+									"    console.error(err);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is equal to the expected amount\", function () {\r",
+									"    const responseData = pm.response.text(); // Use text since the response body is a plain number\r",
+									"    pm.expect(Number(responseData)).to.equal(6000); // Ensure this value aligns with the expected deposit amount\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response body is not null\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    pm.expect(responseData).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									"// Test for response body being greater than or equal to 0\r",
+									"pm.test(\"Response body is greater than or equal to 200\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    pm.expect(responseData).to.be.at.least(200);\r",
+									"});\r",
+									"\r",
+									"// Test for presence of Date header\r",
+									"pm.test(\"Response has Date header\", function () {\r",
+									"    pm.expect(pm.response.headers.has('Date')).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response body is of type number\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Billing/SetDeposit?amount=6000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Billing",
+								"SetDeposit"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "6000"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Billing/SetDeposit?amount=617.0700861371258",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Billing",
+										"SetDeposit"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "617.0700861371258"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "4) Сделать заказ, на который хватает денег",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Check status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"// Validate response body\r",
+									"pm.test(\"Response body is a number greater than or equal to 0\", function () {\r",
+									"    const responseBody = pm.response.text();\r",
+									"    pm.expect(Number(responseBody)).to.be.a('number');\r",
+									"    pm.expect(Number(responseBody)).to.be.at.least(0); // Check if the response number is greater than or equal to zero\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Order/PlaceOrder?amount=1000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order",
+								"PlaceOrder"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Order/PlaceOrder?amount=3321.806870845747",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Order",
+										"PlaceOrder"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "3321.806870845747"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "5) Посмотреть деньги на счету пользователя и убедиться, что их сняли.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"pm.test(\"Amount is equal to 5000\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    pm.expect(response.amount).to.equal(5000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Billing/GetAmount"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": "{{baseUrl}}/Billing/GetAmount"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "6) Посмотреть в сервисе нотификаций отправленные сообщения и убедиться, что сообщение отправилось",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Check if the response is an array\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    pm.expect(response).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"// Check if at least one message has the name \"True\"\r",
+									"pm.test(\"At least one message has the name 'True'\", function () {\r",
+									"    const hasTrueName = response.some(message => message.name === \"True\");\r",
+									"    pm.expect(hasTrueName).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Mail/GetMail"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": "{{baseUrl}}/Mail/GetMail"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "7) Сделать заказ, на который не хватает денег.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.text();\r",
+									"const expectedValue = 5000; // Updated expected value based on the latest response\r",
+									"\r",
+									"pm.test(\"Response value should not decrease in multiple requests\", function () {\r",
+									"    const currentValue = parseFloat(response);\r",
+									"    pm.expect(currentValue).to.equal(expectedValue);\r",
+									"    \r",
+									"    // Store the value in an environment variable for comparison in subsequent requests\r",
+									"    const previousValue = pm.environment.get(\"previousOrderValue\");\r",
+									"\r",
+									"    if (previousValue !== undefined) {\r",
+									"        pm.expect(currentValue).to.equal(parseFloat(previousValue));\r",
+									"    }\r",
+									"    \r",
+									"    pm.environment.set(\"previousOrderValue\", currentValue);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Order/PlaceOrder?amount=10000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order",
+								"PlaceOrder"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "10000"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Order/PlaceOrder?amount=3321.806870845747",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Order",
+										"PlaceOrder"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "3321.806870845747"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "8) Посмотреть деньги на счету пользователя и убедиться, что их количество не поменялось.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains an amount field\", function () {\r",
+									"    pm.expect(response.amount).to.exist;\r",
+									"    pm.expect(response.amount).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Amount is equal to 5000\", function () {\r",
+									"    pm.expect(response.amount).to.equal(5000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Billing/GetAmount"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": "{{baseUrl}}/Billing/GetAmount"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "9) Посмотреть в сервисе нотификаций отправленные сообщения и убедиться, что сообщение отправилось.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Response contains at least one message with name 'False'\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    const hasFalseName = response.some(item => item.name === \"False\");\r",
+									"    pm.expect(hasFalseName).to.be.true;\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Mail/GetMail"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": "{{baseUrl}}/Mail/GetMail"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IlJ1c2xhbiIsIlRlbGVwaG9uZSI6Iis3OTIyMjIxMzMyMTIiLCJJZCI6IjEiLCJleHAiOjE3NTY5OTI4NDZ9.PZv46O7CRdU188O_0xOOe4Wane0JZm2_ef_aCBwtz0c"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://arch.homework"
+		}
+	]
+}

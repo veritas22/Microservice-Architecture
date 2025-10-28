@@ -1,0 +1,38 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5059"
+    },
+    "https": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "POSTGRES_CONNECTION_STRING": "Host=localhost;Username=postgres;Password=admin;Database=Order",
+        "SECRET": "fgryrhfdjhgklossdsfsdfdddddddddddddddddddddddddddddddddddddddssssssssssssssssssdsfdf",
+        "OTLP_CONNECTION": "http://127.0.0.1:4317"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:4567;http://localhost:4577"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "8081",
+        "ASPNETCORE_HTTP_PORTS": "8080",
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "POSTGRES_CONNECTION_STRING": "Host=localhost;Username=postgres;Password=admin;Database=Order",
+        "SECRET": "fgryrhfdjhgklossdsfsdfdddddddddddddddddddddddddddddddddddddddssssssssssssssssssdsfdf",
+        "OTLP_CONNECTION": "http://127.0.0.1:4317"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}

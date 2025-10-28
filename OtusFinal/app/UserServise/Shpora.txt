@@ -1,0 +1,30 @@
+
+--- dockerhub
+docker build -t otus14 .
+docker tag otus14:latest gabbazovr/otus14:latest. 
+docker push gabbazovr/otus14:latest.
+
+---docker-compose
+
+docker compose down
+docker compose up
+
+
+        /// <summary>
+        /// Надо следить грамотно за миграцией
+        /// PM> add-migration create -context PostgresDBContext
+        /// PM>  Update-Database 20250221205433_create
+        /// 
+        /// обновляем до 0
+        /// PM>  Update-Database 0
+        /// PM>  Remove-Migration -context PostgresDBContext
+        /// PM> add-migration create -context PostgresDBContext
+        /// 
+        /// применяем новые изменения
+        /// PM> add-migration -context PostgresDBContext
+        /// Update-Database но я сделал автоматом
+        /// 
+        /// откатываем назад до нужной версии
+        /// Update-Database 20250224133140_v9
+
+

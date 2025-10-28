@@ -1,0 +1,6 @@
+services:
+  order:
+    image: ${DOCKER_REGISTRY-}order
+    build:
+      context: .
+      dockerfile: Order/Web/Dockerfile

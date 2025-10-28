@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grps";
+
+package warehouse;
+
+// The greeting service definition.
+service WarehouseServiseGrps {
+  // Sends a greeting
+  rpc AddReserve (ProductId) returns (Reserve);
+  rpc DeleteReserve (Reserve) returns (StatusReply);
+  rpc GetReserve (ProductId) returns (ReserveDto);
+}
+
+
+// The response message containing the greetings.
+message ReserveDto {
+  int32 Id  = 1;
+  int32 ProductId  = 2;
+  int32 Status  = 3;
+}
+
+message Customer {
+  int64 id = 1;
+  string name = 2;
+}
+
+message ProductId {
+  int32 productId= 1;
+}
+
+message Reserve {
+  int32 reserveId = 1;
+}
+
+// The response message containing the greetings.
+message ReserveReply {
+  int32 status = 1;
+}
+
+message StatusReply {
+  int32 status = 1;
+}

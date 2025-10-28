@@ -1,0 +1,6 @@
+auth:
+  enablePostgresUser: true
+  postgresPassword: "admin"
+  username: "admin"
+  password: "admin"
+  database: "Otus"
