@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Domen.ValueObject;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,9 @@ namespace Domen.Aggregate.Events
         public int EventId { get; }
         public Guid AggregateId { get; }
         public int UserId { get; }
-        public float Price { get; }
+        public Price Price { get; }
 
-        public ResrvedWarehouseNotEvent( int userId, float price, Guid aggregateId, int eventId)
+        public ResrvedWarehouseNotEvent( int userId, Price price, Guid aggregateId, int eventId)
         {
             UserId = userId;
             Price = price;

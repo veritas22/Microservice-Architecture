@@ -38,7 +38,7 @@ namespace Application.EventHandler
             var eventsOrder = new EventsOrder(resrvedNotEvent.AggregateId, resrvedNotEvent.EventId, typeof(ResrvedWarehouseNotEvent).Name, resrvedNotEvent);
             var result = await _repositoryEvent.AddAsync(eventsOrder, cancellationToken);
             _logger.LogInformation($"Order оформлен не успешно. Событие ResrvedWarehouseNotEvent");
-            var deposit = await _billling.DepositMoneyAsync(resrvedNotEvent.UserId, resrvedNotEvent.Price);
+            var deposit = await _billling.DepositMoneyAsync(resrvedNotEvent.UserId, resrvedNotEvent.Price.Value);
 
 
         }

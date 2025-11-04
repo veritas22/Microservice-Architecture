@@ -34,7 +34,7 @@ namespace Application.EventHandler
             var result = await _repositoryEvent.AddAsync(eventsOrder, cancellationToken);
             _logger.LogInformation($"Order оформлен успешно. Событие CourierPlacedEvent");
 
-            await _sendMessage.PublishMessage(orderPlacedEvent.UserId, orderPlacedEvent.Price, "mailOrder", $"Order оформлен успешно price {orderPlacedEvent.Price}", true);
+            await _sendMessage.PublishMessage(orderPlacedEvent.UserId, orderPlacedEvent.Price.Value, "mailOrder", $"Order оформлен успешно price {orderPlacedEvent.Price}", true);
 
         }
     }

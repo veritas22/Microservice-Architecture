@@ -41,10 +41,10 @@ namespace Application.EventHandler
             var statusWar = await _warehouse.DeleteReserveAsync(resrvedEvent.ReserveId);
             //_logger.LogInformation($"_warehouse запись удалена resrveId {resrveId}");
 
-            var depositBil = await _billling.DepositMoneyAsync(resrvedEvent.UserId, resrvedEvent.Price);
+            var depositBil = await _billling.DepositMoneyAsync(resrvedEvent.UserId, resrvedEvent.Price.Value);
             //_logger.LogInformation($"_billling откат userId  {userId} price {price}");
 
-            await _sendMessage.PublishMessage(resrvedEvent.UserId, resrvedEvent.Price, "mailOrder", $"Order оформлен не успешно. событие OrderNotPlacedEvent", false);
+            await _sendMessage.PublishMessage(resrvedEvent.UserId, resrvedEvent.Price.Value, "mailOrder", $"Order оформлен не успешно. событие OrderNotPlacedEvent", false);
             //_logger.LogInformation($"_sendMessage сообщение отправлено");
         }
     }

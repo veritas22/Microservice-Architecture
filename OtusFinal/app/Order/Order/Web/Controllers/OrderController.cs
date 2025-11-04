@@ -1,5 +1,6 @@
 using Application.Interfaces;
 using Application.Interfaces.Broker;
+using Domen.ValueObject;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
@@ -33,7 +34,8 @@ namespace Order.Controllers
 
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
             CancellationToken cancel = cancelTokenSource.Token;
-            var result = await _order.PlaceOrderAsync(int.Parse(userIdClaims), amount, cancel);
+            var price = new Price(amount);
+            var result = await _order.PlaceOrderAsync(int.Parse(userIdClaims), price, cancel);
             return Ok(result);
         }
     }

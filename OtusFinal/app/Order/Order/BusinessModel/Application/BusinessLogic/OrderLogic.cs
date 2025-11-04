@@ -3,6 +3,7 @@ using Application.Interfaces.Broker;
 using Domen;
 using Domen.Aggregate.Events;
 using Domen.Interfaces.Event;
+using Domen.ValueObject;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -34,12 +35,12 @@ namespace Application.BusinessLogic
         /// <param name="price"></param>
         /// <param name="cancel"></param>
         /// <returns></returns>
-        public async Task<float> PlaceOrderAsync(int userId, float price, CancellationToken cancel)
+        public async Task<float> PlaceOrderAsync(int userId, Price price, CancellationToken cancel)
         {
             try
             {
 
-                var result = await _billling.WithdrawMoneyAsync(userId, price);
+                var result = await _billling.WithdrawMoneyAsync(userId, price.Value);
                 Guid aggregateId = Guid.NewGuid();
 
                 if (result != -1)

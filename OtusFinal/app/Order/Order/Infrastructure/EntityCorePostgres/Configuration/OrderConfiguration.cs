@@ -1,4 +1,5 @@
 ﻿using Domen;
+using Domen.ValueObject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -20,6 +21,7 @@ namespace EntityCorePostgres.Configuration
 
             builder
                 .Property(b => b.Price)
+                .HasConversion(name => name.Value, name => new Price(name))
                 .HasColumnName("price");
 
             builder

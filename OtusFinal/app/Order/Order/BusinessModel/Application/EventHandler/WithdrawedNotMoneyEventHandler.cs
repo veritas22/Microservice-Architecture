@@ -34,7 +34,7 @@ namespace Application.EventHandler
             var result = await _repositoryEvent.AddAsync(eventsOrder, cancellationToken);
             _logger.LogInformation($"Order оформлен не успешно. Событие WithdrawedMoneyNotEvent");
 
-            await _sendMessage.PublishMessage(withdrawedMoneyEvent.UserId, withdrawedMoneyEvent.Price, "mailOrder", $"Order оформлен не успешно. Событие WithdrawedMoneyNotEvent", false);
+            await _sendMessage.PublishMessage(withdrawedMoneyEvent.UserId, withdrawedMoneyEvent.Price.Value, "mailOrder", $"Order оформлен не успешно. Событие WithdrawedMoneyNotEvent", false);
 
         }
     }

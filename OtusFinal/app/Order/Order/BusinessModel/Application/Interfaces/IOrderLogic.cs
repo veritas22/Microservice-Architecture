@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domen.ValueObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Application.Interfaces
 {
     public interface IOrderLogic
     {
-        Task<float> PlaceOrderAsync(int userId, float amount, CancellationToken cancel);
+        Task<float> PlaceOrderAsync(int userId, Price amount, CancellationToken cancel);
     }
 }
